@@ -1,3 +1,17 @@
+<?php
+
+require_once "config.php";
+
+session_start();
+
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
+{
+    header("location: login.php");
+}
+
+
+?>
 <style>
     @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
 
@@ -243,9 +257,7 @@ body {
   z-index: 999;
 }
 </style>
-<?php
-
-include "config.php"; // Using database connection file here
+<?php 
 
 
 $records = mysqli_query($conn,"SELECT * FROM orders ORDER BY id desc LIMIT 1"); // fetch data from database
@@ -253,7 +265,7 @@ $records = mysqli_query($conn,"SELECT * FROM orders ORDER BY id desc LIMIT 1"); 
 while($data = mysqli_fetch_array($records))
 {
 ?>
-<?php include('templates/header.php'); ?>
+<?php include('templates/userHeader.php'); ?>
 <?php include('templates/csstags.php'); ?>
 <div class="slide-container">
   
