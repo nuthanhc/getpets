@@ -47,6 +47,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     else{
       $email = trim($_POST['email']);
   }
+    if(empty(trim($_POST["address"]))){
+        $address_err = "address cannot be blank";
+    }
+    else{
+        $address = trim($_POST['address']);
+    }
   
 
 // Check for password
@@ -69,16 +75,17 @@ if(trim($_POST['password']) !=  trim($_POST['confirm_password'])){
 // If there were no errors, go ahead and insert into the database
 if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
 {
-    $sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO users (username, password, email, address) VALUES (?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     if ($stmt)
     {
-        mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_password, $param_email);
+        mysqli_stmt_bind_param($stmt, "ssss", $param_username, $param_password, $param_email, $param_address);
 
         // Set these parameters
         $param_username = $username;
         $param_password = $password;
         $param_email = $email;
+        $param_address = $address;
         // Try to execute the query
         if (mysqli_stmt_execute($stmt))
         {
@@ -108,7 +115,7 @@ mysqli_close($conn);
   <div class="space"></div>
 
   <div class="container">
-<h3> Create account :</h3>
+<div class="text-center"><h3> Create account :</h3></div>
 <hr>
 <form action="" method="post">
   <div class="form-row">
@@ -116,7 +123,7 @@ mysqli_close($conn);
       <label for="inputusername4">Username</label>
       <input type="text" class="form-control" name="username" id="inputusername4" placeholder="username">
     </div>
-    <div class="form-group">
+    <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
       <input type="email" class="form-control" name ="email" id="inputEmail4" placeholder="Email-id">
     </div>
@@ -124,15 +131,20 @@ mysqli_close($conn);
       <label for="inputPassword4">Password</label>
       <input type="password" class="form-control" name ="password" id="inputPassword4" placeholder="Password">
     </div>
-  </div>
-  <div class="form-group">
+    <div class="form-group col-md-6">
       <label for="inputPassword4">Confirm Password</label>
       <input type="password" class="form-control" name ="confirm_password" id="inputPassword" placeholder="Confirm Password">
+    </div>
+  </div>
+  
+  <div class="form-group">
+      <label for="address">Address</label>
+      <textarea class="form-control" id="address" rows="3" name ="address" placeholder="address"></textarea>
   </div>
    <br>
-  <button type="submit" class="btn btn-primary">Continue</button>
-  <br><br>
-  <p>Already have an account? <a href="login.php">Sign-in</a></p>
+  <div class="text-center"><button type="submit" class="btn btn-primary">Continue</button></div>
+<br>
+  <div class="text-center"><p>Already have an account? <a href="login.php">Sign-in</a></p></div>
  
 </form>
 </div>

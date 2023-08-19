@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-
-	
-	<?php session_start();  if($_SESSION["type"]=="seller"){
+	<?php session_start(); 
+    error_reporting(0);  
+    if($_SESSION["type"]=="seller"){
 		include('templates/sellerHeader.php'); 
 	}elseif($_SESSION["type"]=="user"){
 		include('templates/userHeader.php'); 
-	}?>
+	}else{
+        include('templates/header.php'); 
+    }?>
 	<?php include('templates/csstags.php'); ?>
 	<br>
     <h1 style=padding-left:25px;>GetPets</h1>

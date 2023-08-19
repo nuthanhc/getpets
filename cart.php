@@ -49,14 +49,15 @@ $result = mysqli_query($conn, "SELECT ROW_NUMBER() OVER () row_num, count(id), i
             $subtotal = $row['count(id)'] * $row['price'];
             $totalCost += $subtotal;
         ?>
-            <div class="col-auto mb-3" style="width: 380px;">
+            <div class="col-md-4 mb-4">
                 <div class="card">
                     <form action="" method="post">
                         <div class="card-body">
-                            <p class="card-text"><?php echo $row['row_num']; ?></p>
-                            <h5 class="card-title"><b><?php echo $row['petname']; ?></b></h5>
-                            <img class="img_size" style="height: 220px;" src="<?php echo $row['photo']; ?>" alt="pet image" width="308px">
+                            <!-- <p class="card-text"><?php echo $row['row_num']; ?></p> -->
+                            
+                            <img class="img_size" src="<?php echo $row['photo']; ?>" alt="pet image" style="height: 220px; width:100%;">
                             <p></p>
+                            <h5 class="card-title mb-3"><b><?php echo $row['petname']; ?></b></h5>
                             <h6 class="card-subtitle mb-3"><b>Specie :&nbsp;</b> <?php echo $row['specie']; ?></h6>
                             <p class="card-text">
                                 <b>No of Quantity:&nbsp;</b>
@@ -66,7 +67,9 @@ $result = mysqli_query($conn, "SELECT ROW_NUMBER() OVER () row_num, count(id), i
                             </p>
                             <h6 class="card-subtitle mb-2 "><b> ₹ <?php echo $row['price']; ?> x <span id="quantity_val_<?php echo $row['row_num']; ?>"><?php echo $row['count(id)']; ?></span></b></h6>
                             <p class="card-text"><b>Total Cost: ₹ <span id="subtotal_<?php echo $row['row_num']; ?>"><?php echo $subtotal; ?></span></b></p>
-                            <a href="delete_cart.php?id=<?php echo $row["id"]; ?>">remove</a>
+                            <div class="text-center">
+                                <a href="delete_cart.php?id=<?php echo $row["id"]; ?>">remove</a>
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -33,33 +33,34 @@ else
 <html lang="en">
   <head>
     <?php include('templates/header.php'); ?>
+    <?php include('templates/csstags.php'); ?>
     <?php include('templates/css_login.php'); ?>
 
     <title>Admin</title>
 
   </head>
   <body>
-      <div class="space"></div>
+    <div class="space"></div>
     <div class="container">
-      <h3>Admin Login:</h3>
+      <h3 class="text-center">Admin Login:</h3>
       <hr>
 
-    <form action="" method="post">
-      <div class="form-group">
-        <label for="exampleInputadmin_id">Admin_id </label>
-        <input type="text" name="admin_id" class="form-control" id="exampleInputadmin_id" aria-describedby="emailHelp" placeholder="Admin_id">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
-      </div>
+      <form action="" method="post" class="mx-auto">
+        <div class="form-group">
+          <label for="exampleInputadmin_id">Admin_id </label>
+          <input type="text" name="admin_id" class="form-control" id="exampleInputadmin_id" aria-describedby="emailHelp" placeholder="Admin_id">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+        </div>
   
-      <a href="#">Forgot password?</a>
-      <br><br>
+        <a href="#">Forgot password?</a>
+        <br><br>
 
-      <button type="submit" class="btn btn-primary">Continue</button>
+       <div class="text-center"> <button type="submit" class="btn btn-primary">Continue</button></div>
  
-    </form>
+      </form>
     </div>
 
     <?php include('templates/scriptags.php'); ?>

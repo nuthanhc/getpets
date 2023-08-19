@@ -21,8 +21,8 @@ include('templates/adminHeader.php'); ?>
     </head>
 <body>
  <section class="admin-table">
+    <div><h1><center>Pets-Details</center></h1></div>
     <div class="table-body">
-    <h1><center>Pets-Details</center></h1>
         <table class="pet">
             <tr class="tagLine">
                 <td>Id</td>
@@ -73,8 +73,8 @@ include('templates/adminHeader.php'); ?>
     
     </div>
 
+    <div><h1><center>User-Details</center></h1></div>
     <div class="table-body">
-    <h1><center>User-Details</center></h1>
         <table id="user">
             <tr class="tagLine">
                 <td>Id</td>
@@ -111,9 +111,8 @@ include('templates/adminHeader.php'); ?>
         </table>
     
     </div>
-
+    <div><h1><center>Sellers-Details</center></h1></div>
     <div class="table-body">
-    <h1><center>Sellers-Details</center></h1>
         <table id="seller">
             <tr class="tagLine">
                 <td>Id</td>
@@ -150,8 +149,8 @@ include('templates/adminHeader.php'); ?>
         </table>
     
     </div>
+    <div><h1><center>Oredr-Details</center></h1></div>
     <div class="table-body">
-    <h1><center>Oredr-Details</center></h1>
         <table class="order">
             <tr class="tagLine">
                 <td>Id</td>

@@ -19,7 +19,7 @@ if ($_SESSION['type'] == "user") {
 <body>
 <section class="profile">
     <div class="container mt-4 d-flex justify-content-center align-items-center">
-        <div class="card col-6 text-center">
+        <div class="card col-md-4 mb-4 text-center">
             <div class="card-body">
                 <?php
                 if ($conn->connect_error) { 

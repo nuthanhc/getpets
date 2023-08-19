@@ -41,7 +41,7 @@ else
   <body>
 <div class="space"></div>
 <div class="container">
-<h3>Log-in:</h3>
+<div class="text-center"><h3>Seller's Log-in:</h3></div>
 <hr>
 
 <form action="" method="post">
@@ -53,17 +53,15 @@ else
     <label for="exampleInputPassword1"><b>Password :</b></label>
     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Keep me signed in</label>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+  <div class="text-center mt-4"> 
     <a href="#">Forgot password?</a>
   </div>
-  <button type="submit" class="btn btn-primary">Log-in</button>
-  <br><br>
-  <p>Create your account ? <a href="seller_register.php"> <u>Sign-UP</u></a></p>
-  
+  <div class="text-center mt-4"> 
+    <button type="submit" class="btn btn-primary">Log-in</button>
+  </div>
+  <div class="text-center mt-4">
+    <p>Create your account ? <a href="seller_register.php"> <u>Sign-UP</u></a></p>
+  </div>
 </form>
 
 

@@ -18,4 +18,21 @@ body {
 form{
   width:500px;
 }
+
+      @media (max-width: 576px) {
+        
+        .container {
+          max-width: 100%; 
+          padding: 20px; 
+        }
+
+        form {
+          width: 100%; 
+        }
+
+        
+        .form-group input {
+          width: 100%; 
+        }
+      }
 </style>

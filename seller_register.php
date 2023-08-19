@@ -110,7 +110,7 @@ mysqli_close($conn);
   <div class="space"></div>
 
   <div class="container">
-<h3> Create account :</h3>
+<div class="text-center"><h3> Create account :</h3></div>
 <hr>
 <form action="" method="post">
   <div class="form-row">
@@ -132,9 +132,9 @@ mysqli_close($conn);
       <input type="password" class="form-control" name ="confirm_password" id="inputPassword" placeholder="Confirm Password">
   </div>
    <br>
-  <button type="submit" class="btn btn-primary">Continue</button>
-  <br><br>
-  <p>Already have an account? <a href="seller_login.php">Sign-in</a></p>
+  <div class="text-center"><button type="submit" class="btn btn-primary">Continue</button></div>
+  <br>
+  <div class="text-center"><p>Already have an account? <a href="seller_login.php">Sign-in</a></p></div>
  
 </form>
 </div>

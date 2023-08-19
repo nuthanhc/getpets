@@ -1,5 +1,6 @@
 <?php
  include("config.php");
+ session_start();
  if($conn->connect_error)
  { 
      die('Connection Failed : '.$conn->connect_error);
@@ -18,52 +19,67 @@
 
  }
 ?>
+<?php error_reporting(0);  
+    if($_SESSION["type"]=="seller"){
+		include('templates/sellerHeader.php'); 
+	}else{
+        include('templates/adminHeader.php'); 
+    }?>
 <?php include('templates/csstags.php'); ?>
 
-<body class="m-4">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
+<body>
+    <div class="container mt-4">
                 <div class="form_body_addpets">
                     <h3>Edit Pet Details</h3>
                     <hr>
                     <form action="petsTableEditQuery.php" method="post">
-                        <label for="id"><b>ID :</b></label>
-                        <input type="text" class="form-control mb-3" value="<?php echo $row['id']; ?>" name="id">
-                        
-                        <label for="petname"><b>Pet Name :</b></label>
-                        <input type="text" class="form-control mb-3" value="<?php echo $row['petname']; ?>" name="petname">
-                        
-                        <label for="specie"><b>Species :</b></label>
-                        <select id="select-state" class="form-control mb-3" name="specie" required>
-                            <option value="<?php echo $row['specie']; ?>"><?php echo $row['specie']; ?></option>
-                            <option value="Cat">Cat</option>
-                            <option value="Dog">Dog</option>
-                            <option value="Fish">Fish</option>
-                        </select>
-                        
-                        <label for="breed"><b>Breed :</b></label>
-                        <input type="text" class="form-control mb-3" value="<?php echo $row['breed']; ?>" name="breed">
-                        
-                        <label for="age"><b>Age :</b></label>
-                        <input type="text" class="form-control mb-3" value="<?php echo $row['age']; ?>" name="age">
-                        
-                        <label for="color"><b>Color :</b></label>
-                        <input type="text" class="form-control mb-3" value="<?php echo $row['color']; ?>" name="color">
-                        
-                        <label for="cost"><b>Cost :</b></label>
-                        <input type="text" class="form-control mb-3" value="<?php echo $row['cost']; ?>" name="cost">
-                        
-                        <label for="paragraph"><b>About Pet :</b></label>
-                        <input type="text" class="form-control mb-3" name="paragraph" minlength="10" value="<?php echo $row['paragraph']; ?>">
-                        
-                        <div class="text-center">
+                        <div class="form_addpets mb-3">
+                            <label for="id"><b>ID :</b></label>
+                            <input type="text" class="form-control" value="<?php echo $row['id']; ?>" name="id">
+                        </div>
+                        <div class="form_addpets mb-3">
+                            <label for="petname"><b>Pet Name :</b></label>
+                            <input type="text" class="form-control" value="<?php echo $row['petname']; ?>" name="petname">
+                        </div>
+                        <div class="form_addpets mb-3">
+                            <label for="specie"><b>Species :</b></label>
+                            <select id="select-state" class="form-control" name="specie" required>
+                                <option value="<?php echo $row['specie']; ?>"><?php echo $row['specie']; ?></option>
+                                <option value="Cat">Cat</option>
+                                <option value="Dog">Dog</option>
+                                <option value="Fish">Fish</option>
+                            </select>
+                        </div>
+                        <div class="form_addpets mb-3">
+                            <label for="breed"><b>Breed :</b></label>
+                            <input type="text" class="form-control" value="<?php echo $row['breed']; ?>" name="breed">
+                        </div>
+                        <div class="form_addpets mb-3">
+                            <label for="breed"><b>Breed :</b></label>
+                            <input type="text" class="form-control" value="<?php echo $row['breed']; ?>" name="breed">
+                        </div>
+                        <div class="form_addpets mb-3">
+                            <label for="age"><b>Age :</b></label>
+                            <input type="text" class="form-control" value="<?php echo $row['age']; ?>" name="age">
+                        </div>
+                        <div class="form_addpets mb-3">
+                            <label for="color"><b>Color :</b></label>
+                            <input type="text" class="form-control" value="<?php echo $row['color']; ?>" name="color">
+                        </div>
+                        <div class="form_addpets mb-3">
+                            <label for="cost"><b>Cost :</b></label>
+                            <input type="text" class="form-control" value="<?php echo $row['cost']; ?>" name="cost">
+                        </div>
+                        <div class="form_addpets mb-3">
+                            <label for="paragraph"><b>About Pet :</b></label>
+                            <textarea type="text" class="form-control" name="paragraph" minlength="10"><?php echo $row['paragraph']; ?></textarea>
+                        </div>
+                        <div class="form_addpets text-center">
                             <button onclick="goBack()" class="btn btn-primary" >Back</button>
                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </div>
                     </form>
                 </div>
-            </div>
         </div>
     </div>
     <script>
@@ -71,7 +87,8 @@
             window.history.back();
         }
     </script>
-</body>
-</html>
+    
 
+<?php include('templates/footer.php'); ?>
+<?php include('templates/scriptags.php'); ?>
 

@@ -256,6 +256,47 @@ body {
   right: 100px;
   z-index: 999;
 }
+/* Media query for screens with max width 768px (tablet) */
+@media (max-width: 768px) {
+      .slide-container {
+          width: 100%;
+      }
+
+      .clash-card {
+          width: 90%;
+          margin: auto;
+      }
+
+      .clash-card__image img {
+          width: 100%;
+          position: relative;
+          top: 0;
+          left: 0;
+      }
+
+      .clash-card__unit-name {
+          font-size: 18px;
+      }
+
+      .clash-card__unit-description {
+          padding: 10px;
+      }
+
+      .clash-card__unit-stats .one-third {
+          width: 50%;
+      }
+
+      .slick-prev {
+          left: 20px;
+      }
+
+      .slick-next {
+          right: 20px;
+      }.clash-card img{
+        width:100% !important; 
+      }
+  }
+
 </style>
 <?php 
 
@@ -271,10 +312,10 @@ while($data = mysqli_fetch_array($records))
   
   <div class="wrapper">
     <div class="clash-card ">
-      <div class="">
+      <div class="mt-3">
         <img src="https://st.depositphotos.com/1804675/1400/v/600/depositphotos_14001587-stock-illustration-pet-approved-seal.jpg " alt="pets" />
       </div>
-      <div class="clash-card__level "><?php echo $data['date']; ?></div>
+      <div class="clash-card__level"><?php echo date('d/m/y', strtotime($data['date'])); ?></div>
       <div class="clash-card__unit-name"><?php echo $data['name']; ?> </div>
       <div class="clash-card__unit-name">Total : ₹<?php echo $data['total_cost']; ?> </div> 
       <div class="clash-card__unit-description"> Your pet will be delivered at the address :

@@ -24,4 +24,14 @@
       p{
         font-size: 12px;
       }
+      
+        @media (max-width: 768px) {
+            .table-body {
+                overflow: auto; 
+                max-height: 400px; 
+            }
+            .admin-table{
+              margin:20px 15px 15px 15px ;
+            }
+        }
 </style>

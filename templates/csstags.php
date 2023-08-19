@@ -120,17 +120,19 @@
     }
 	@media (max-width: 768px) {
 		.navbar{
-			display:flex;
-			justify-content:center;
+			display:flex !important;
+			justify-content:center !important;
 		}
         .nav-pills {
+			display:flex !important;
+			justify-content:center !important;
             font-size: 12px;
-            margin-right: 10px;
+            margin: 0px;
         }
 
-        .navbar-nav .nav-item .nav-link {
+        .nav-pills .nav-link {
             font-size: 14px;
-            padding: 5px 10px;
+            padding: 10px 10px;
         }
 
         .dropdown-menu {

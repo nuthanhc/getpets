@@ -25,8 +25,8 @@ include('templates/sellerHeader.php'); ?>
             <h3>Add Your Pets</h3>
             <button class="btn btn-primary" onclick="window.location.href='add_pets.php'">Add Pet</button>
         </div>
+    <div><h1><center>Your-Pets-Details</center></h1></div>
     <div class="table-body">
-    <h1><center>Your-Pets-Details</center></h1>
         <table class="pet">
             <tr class="tagLine">
                 <td>Id</td>
